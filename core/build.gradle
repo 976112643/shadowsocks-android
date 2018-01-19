@@ -30,7 +30,7 @@ android {
 
     externalNativeBuild {
         ndkBuild {
-            path 'src/main/jni/Android.mk'
+            path 'src\\main\\jni\\Android.mk'
         }
     }
 }
@@ -38,20 +38,20 @@ android {
 task goBuild(type: Exec) {
     if (Os.isFamily(Os.FAMILY_WINDOWS)) {
         executable "cmd.exe"
-        args "/c", "src/overture/make.bat " + minSdkVersion
+        args "/c", "src\\overture\\make.bat " + minSdkVersion
     } else {
         executable "sh"
-        args "-c", "src/overture/make.bash " + minSdkVersion
+        args "-c", "src\\overture\\make.bash " + minSdkVersion
     }
 }
 
 task goClean(type: Exec) {
     if (Os.isFamily(Os.FAMILY_WINDOWS)) {
         executable "cmd.exe"
-        args "/c", "src/overture/clean.bat"
+        args "/c", "src\\overture\\clean.bat"
     } else {
         executable "sh"
-        args "-c", "src/overture/clean.bash"
+        args "-c", "src\\overture\\clean.bash"
     }
 }
 

@@ -2,7 +2,7 @@
 SETLOCAL
 
 IF NOT DEFINED ANDROID_NDK_HOME (
-	SET ANDROID_NDK_HOME=%ANDROID_HOME%\ndk-bundle
+	SET ANDROID_NDK_HOME=D:\android-ndk-r16b
 )
 
 SET DIR=%CD%
@@ -27,6 +27,8 @@ MKDIR %DEPS%>nul 2>nul
 MKDIR %TARGET%\armeabi-v7a>nul 2>nul 
 MKDIR %TARGET%\x86>nul 2>nul 
 MKDIR %TARGET%\arm64-v8a>nul 2>nul 
+
+ECHO %ANDROID_NDK_HOME%
 
 IF NOT EXIST %ANDROID_ARM_CC% (
 	ECHO "Make standalone toolchain for ARM arch"

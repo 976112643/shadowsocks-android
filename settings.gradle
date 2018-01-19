@@ -1,1 +1,2 @@
-include ':mobile', ':core', ':plugin'
+include ':mobile',  ':plugin'
+//':core',

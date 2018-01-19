@@ -37,13 +37,19 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    sourceSets.main.jniLibs.srcDirs +=
-            new File(project(':core').buildDir, "intermediates/bundles/${getCurrentFlavor()}/jni")
-    sourceSets.main.jniLibs.srcDirs += new File(project(':core').projectDir, "src/overture/bin")
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+//    sourceSets.main.jniLibs.srcDirs +=
+//            new File(project(':core').buildDir, "intermediates/bundles/${getCurrentFlavor()}/jni")
+//    sourceSets.main.jniLibs.srcDirs += new File(project(':core').projectDir, "src/overture/bin")
 }
 
 dependencies {
-    implementation project(':core')
+//    implementation project(':core')
+    api project(':plugin')
     implementation "com.android.support:customtabs:$supportLibraryVersion"
     implementation "com.android.support:design:$supportLibraryVersion"
     implementation "com.android.support:gridlayout-v7:$supportLibraryVersion"

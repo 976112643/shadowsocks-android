@@ -232,7 +232,7 @@ REDSOCKS_SOURCES := base.c http-connect.c \
 LOCAL_STATIC_LIBRARIES := libevent
 
 LOCAL_MODULE := redsocks
-LOCAL_SRC_FILES := $(addprefix redsocks/, $(REDSOCKS_SOURCES)) 
+LOCAL_SRC_FILES := $(addprefix redsocks/, $(REDSOCKS_SOURCES))
 LOCAL_CFLAGS := -std=gnu99 -DUSE_IPTABLES \
 	-I$(LOCAL_PATH)/redsocks \
 	-I$(LOCAL_PATH)/libevent/include \
